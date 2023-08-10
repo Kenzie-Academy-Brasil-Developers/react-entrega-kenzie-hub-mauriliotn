@@ -1,0 +1,44 @@
+.inputBox {
+  .inputGrid {
+    position: relative;
+  }
+
+  input {
+    margin-top: 20px;
+    width: 100%;
+    color: var(--color-grey0);
+    font-family: var(--font);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.625rem;
+
+    padding: 0 1rem;
+    height: 3rem;
+
+    border-radius: 4px;
+    border: 1px solid var(--color-grey2);
+    background: var(--color-grey2);
+
+    &:disabled {
+      opacity: 0.5;
+    }
+
+    ::placeholder {
+      color: var(--color-grey50);
+    }
+  }
+
+  button {
+    color: var(--color-grey50);
+    position: absolute;
+    top: 2rem;
+    right: 18.5px;
+    font-size: 1.5rem;
+    :hover {
+      color: var(--color-grey3);
+    }
+  }
+  p {
+    margin-top: 12px;
+  }
+}

@@ -1,0 +1,27 @@
+.container {
+  width: 100%;
+  max-width: 775px;
+  margin: 0 auto;
+  padding: 1rem;
+
+  &.headerFlex {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px 0;
+    gap: 1rem;
+  }
+  &.sm {
+    max-width: 370px;
+  }
+}
+
+.pageBox {
+  display: flex;
+  padding: 1rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-height: 100vh;
+}

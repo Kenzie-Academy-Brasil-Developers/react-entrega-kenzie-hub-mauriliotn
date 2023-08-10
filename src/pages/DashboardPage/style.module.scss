@@ -1,0 +1,23 @@
+main {
+  & > div:first-child {
+    padding: 20px 1rem;
+  }
+}
+.userFlex {
+  border-top: 1px solid var(--color-grey3);
+  border-bottom: 1px solid var(--color-grey3);
+  & > div {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.625rem;
+    padding: 2.75rem 1rem;
+  }
+}
+.contentFlex {
+  display: flex;
+  flex-direction: column;
+  padding: 37px 0;
+  gap: 23px;
+}

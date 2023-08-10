@@ -1,0 +1,38 @@
+.selectBox {
+  .selectGrid {
+    position: relative;
+  }
+  select {
+    margin-top: 1.25rem;
+    width: 100%;
+    color: var(--color-grey1);
+    font-family: var(--font);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.625rem;
+
+    padding: 0 1rem;
+    height: 3rem;
+
+    border-radius: 4px;
+    border: 1px solid var(--color-grey2);
+    background: var(--color-grey2);
+    appearance: none;
+  }
+  svg {
+    color: var(--color-grey1);
+    position: absolute;
+    top: 2rem;
+    right: 18.5px;
+    font-size: 1.5rem;
+    :hover {
+      color: var(--color-grey3);
+    }
+  }
+  p {
+    margin-top: 12px;
+  }
+}
+.rotate {
+  transform: rotate(180deg);
+}

@@ -1,0 +1,42 @@
+%font {
+  font-family: var(--font);
+  color: var(--color-grey0);
+}
+
+.title {
+  @extend %font;
+
+  &.one {
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.75rem;
+  }
+  &.two {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.625rem;
+  }
+}
+
+.headline {
+  @extend %font;
+  color: var(--color-grey1);
+  font-size: 12px;
+  font-weight: 400;
+  &.bold {
+    font-weight: 600;
+    line-height: 18px;
+  }
+}
+
+.paragrapf {
+  @extend %font;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.125rem;
+}
+.label {
+  @extend %font;
+  font-size: 0.75rem;
+  font-weight: 400;
+}
