@@ -11,11 +11,11 @@ import { ImSpinner } from "react-icons/im";
 import styles from "./style.module.scss";
 
 export const RegisterForm = () => {
-
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm({
     resolver: zodResolver(registerFormSchema),
   });
@@ -41,9 +41,10 @@ export const RegisterForm = () => {
       setLoading(useForm);
     }
   };
-  
+
   const submit = (formData) => {
     userRegister(formData);
+    reset();
   };
 
   return (
@@ -131,7 +132,9 @@ export const RegisterForm = () => {
       </Select>
       <button
         className={
-          errors && Object.keys(errors).length > 0 ? "btn negative bg" : "btn default bg"
+          errors && Object.keys(errors).length > 0
+            ? "btn negative bg"
+            : "btn default bg"
         }
         disabled={loading}
       >
