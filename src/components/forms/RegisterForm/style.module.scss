@@ -2,3 +2,58 @@
   color: var(--color-grey0);
   height: 48px;
 }
+.slideName {
+  animation: slide-in-left 1s ease-in 0.65s both;
+}
+.slideEmail {
+  animation: slide-in-rigth 1s ease-in 0.75s both;
+}
+.slidePassword {
+  animation: slide-in-left 1s ease-in 0.85s both;
+}
+.slideConfirmPassword {
+  animation: slide-in-rigth 1s ease-in 0.95s both;
+}
+.slideBio {
+  animation: slide-in-left 1s ease-in 1.05s both;
+}
+.slideContact {
+  animation: slide-in-rigth 1s ease-in 1.15s both;
+}
+.slideModule {
+  animation: slide-in-left 1s ease-in 1.25s both;
+}
+.slideButton {
+  animation: slide-in-top 1s ease-in 1.35s both;
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-rigth {
+  0% {
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

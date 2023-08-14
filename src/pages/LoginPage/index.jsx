@@ -9,7 +9,7 @@ export const LoginPage = ({ setUser }) => {
   return (
     <>
       <main className="pageBox">
-        <img src={Logo} alt="Kenzie Hub Logo" />
+        <img className={styles.slideLeft} src={Logo} alt="Kenzie Hub Logo" />
         <div className={`container sm ${styles.flexBox}`}>
           <h2 className="title one">Login</h2>
           <LoginForm setUser={setUser} />

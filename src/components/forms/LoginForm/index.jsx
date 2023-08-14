@@ -48,9 +48,9 @@ export const LoginForm = ({ setUser }) => {
         });
       }
     } finally {
-      // setTimeout(() => {
-      // }, 2200);
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+      }, 2200);
     }
   };
 

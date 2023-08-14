@@ -49,6 +49,7 @@ export const RegisterForm = () => {
   return (
     <form onSubmit={handleSubmit(submit)}>
       <Input
+        animationClass={styles.slideName}
         label="Nome"
         type="text"
         placeholder="Digite aqui seu nome"
@@ -58,6 +59,7 @@ export const RegisterForm = () => {
       />
 
       <Input
+        animationClass={styles.slideEmail}
         label="E-mail"
         type="email"
         placeholder="Digite aqui seu email"
@@ -66,6 +68,7 @@ export const RegisterForm = () => {
         {...register("email")}
       />
       <InputPassword
+        animationClass={styles.slidePassword}
         label="Senha"
         placeholder="Digite aqui sua senha"
         error={errors.password}
@@ -73,6 +76,7 @@ export const RegisterForm = () => {
         {...register("password")}
       />
       <InputPassword
+        animationClass={styles.slideConfirmPassword}
         label="Confirmar Senha"
         placeholder="Digite novamente sua senha"
         error={errors.confirmPassword}
@@ -80,6 +84,7 @@ export const RegisterForm = () => {
         {...register("confirmPassword")}
       />
       <Input
+        animationClass={styles.slideBio}
         label="Bio"
         type="text"
         placeholder="Fale sobre você"
@@ -88,6 +93,7 @@ export const RegisterForm = () => {
         {...register("bio")}
       />
       <Input
+        animationClass={styles.slideContact}
         label="Contato"
         type="text"
         placeholder="Opção de contato"
@@ -96,6 +102,7 @@ export const RegisterForm = () => {
         {...register("contact")}
       />
       <Select
+        animationClass={styles.slideModule}
         label="Selecione o módulo"
         error={errors.course_module}
         disabled={loading}
@@ -130,7 +137,11 @@ export const RegisterForm = () => {
         </option>
       </Select>
       <button
-        className={!isValid || !isDirty ? "btn negative bg" : "btn default bg"}
+        className={
+          !isValid || !isDirty
+            ? `btn negative bg & ${styles.slideButton}`
+            : "btn default bg"
+        }
         disabled={loading}
       >
         {loading ? <ImSpinner /> : "Cadastrar"}
