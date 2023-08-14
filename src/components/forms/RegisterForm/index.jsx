@@ -7,10 +7,11 @@ import { registerFormSchema } from "./registerFormSchema";
 import { api } from "../../../services/api";
 import { useState } from "react";
 import { toast } from "react-toastify";
-import styles from "./style.module.scss";
 import { ImSpinner } from "react-icons/im";
+import styles from "./style.module.scss";
 
 export const RegisterForm = () => {
+
   const {
     register,
     handleSubmit,
@@ -37,10 +38,10 @@ export const RegisterForm = () => {
         });
       }
     } finally {
-      setLoading(false);
+      setLoading(useForm);
     }
   };
-
+  
   const submit = (formData) => {
     userRegister(formData);
   };
@@ -128,7 +129,13 @@ export const RegisterForm = () => {
           Quarto Módulo
         </option>
       </Select>
-      <button className="btn negative bg" disabled={loading}>
+      {/* <button className="btn negative bg" disabled={loading}> */}
+      <button
+        className={
+          errors && Object.keys(errors).length > 0 ? "btn negative bg" : "btn default bg"
+        }
+        disabled={loading}
+      >
         {loading ? <ImSpinner /> : "Cadastrar"}
       </button>
     </form>

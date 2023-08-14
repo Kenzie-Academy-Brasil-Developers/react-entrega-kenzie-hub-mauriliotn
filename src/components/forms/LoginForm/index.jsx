@@ -73,7 +73,15 @@ export const LoginForm = ({ setUser }) => {
           {...register("password")}
         />
       </div>
-      <button className="btn default bg" type="submit" disabled={loading}>
+      <button
+        className={
+          errors && Object.keys(errors).length > 0
+            ? "btn negative bg"
+            : "btn default bg"
+        }
+        type="submit"
+        disabled={loading}
+      >
         {loading ? (
           <span className={styles.loadLogin}>
             <ImSpinner size={28} className="spinner" />
