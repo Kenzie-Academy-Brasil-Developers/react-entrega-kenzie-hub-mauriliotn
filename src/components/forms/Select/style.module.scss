@@ -5,7 +5,6 @@
   select {
     margin-top: 1.25rem;
     width: 100%;
-    color: var(--color-grey1);
     font-family: var(--font);
     font-size: 1rem;
     font-weight: 400;
@@ -19,6 +18,18 @@
     background: var(--color-grey2);
     appearance: none;
   }
+
+  .selectDefault {
+    color: var(--color-grey1);
+  }
+  .selectSelected {
+    color: var(--color-grey0);
+  }
+
+  option {
+    color: var(--color-grey0);
+  }
+
   svg {
     color: var(--color-grey1);
     position: absolute;

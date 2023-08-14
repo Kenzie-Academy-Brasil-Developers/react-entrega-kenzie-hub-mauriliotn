@@ -27,11 +27,16 @@ export const LoginForm = ({ setUser }) => {
     try {
       setLoading(true);
       const { data } = await api.post("/sessions", formData);
+      toast.success(`Bem vindo, ${data.user.name}`, {
+        theme: "dark",
+        autoClose: 1500,
+      });
       setUser(data.user);
-      console.log(data);
       localStorage.setItem("@TOKEN", data.token);
       localStorage.setItem("@USERID", data.user.id);
-      navigate("/dashboard");
+      setTimeout(() => {
+        navigate("/dashboard");
+      }, 2200);
     } catch (error) {
       if (
         error.response?.data.message ===
@@ -41,9 +46,10 @@ export const LoginForm = ({ setUser }) => {
           theme: "dark",
           autoClose: 1500,
         });
-      } else {
       }
     } finally {
+      // setTimeout(() => {
+      // }, 2200);
       setLoading(false);
     }
   };

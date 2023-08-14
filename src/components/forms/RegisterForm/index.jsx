@@ -21,7 +21,6 @@ export const RegisterForm = () => {
   });
 
   const [loading, setLoading] = useState(false);
-
   const userRegister = async (formData) => {
     try {
       setLoading(true);
@@ -102,7 +101,7 @@ export const RegisterForm = () => {
         disabled={loading}
         {...register("course_module")}
       >
-        <option defaultValue className={styles.option} value="">
+        <option hidden defaultValue className={styles.option} value="">
           Selecione o Módulo
         </option>
         <option

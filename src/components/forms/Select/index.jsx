@@ -4,7 +4,9 @@ import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 export const Select = forwardRef(({ children, error, label, ...rest }, ref) => {
   const [rotate, setRotate] = useState(false);
-  const handleClick = () => {
+  const [selectedOption, setSelectedOption] = useState("");
+  const handleClick = (event) => {
+    setSelectedOption(event.target.value);
     setRotate(!rotate);
   };
   return (
@@ -13,7 +15,11 @@ export const Select = forwardRef(({ children, error, label, ...rest }, ref) => {
       <div className={styles.selectGrid}>
         <select
           onClick={handleClick}
-          className={styles.input}
+          className={
+            selectedOption === ""
+              ? `${styles.selectDefault}`
+              : `${styles.selectSelected}`
+          }
           ref={ref}
           {...rest}
         >
