@@ -1,15 +1,38 @@
 import { HeaderDash } from "../../components/Header/HeaderDash";
+import { api } from "../../services/api";
+import { useEffect, useState } from "react";
 import styles from "./style.module.scss";
+import { useNavigate } from "react-router-dom";
 
-export const DashBoardPage = ({ user, userLogout }) => {
+export const DashBoardPage = ({ userLogout }) => {
+  const user = localStorage.getItem("@USERID");
+  const [userLogin, setUserLogin] = useState(null)
+
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    const loadUser = async () => {
+      try {
+        const { data } = await api.get(`/users/${user}`);
+        setUserLogin(data)
+      } catch (error) {
+        console.log(error);
+        navigate("/")
+      }
+    };
+
+    loadUser();
+  }, []);
+  
+
   return (
     <>
       <main>
         <HeaderDash userLogout={userLogout} />
         <div className={styles.userFlex}>
           <div className="container">
-            <h1 className="title one">Olá, {user?.name}</h1>
-            <p className="headline">Primeiro módulo (Introdução ao Frontend)</p>
+            <h1 className="title one">Olá, {userLogin?.name}</h1>
+            <p className="headline">{userLogin?.course_module}</p>
           </div>
         </div>
         <div className="container">
