@@ -129,7 +129,6 @@ export const RegisterForm = () => {
           Quarto Módulo
         </option>
       </Select>
-      {/* <button className="btn negative bg" disabled={loading}> */}
       <button
         className={
           errors && Object.keys(errors).length > 0 ? "btn negative bg" : "btn default bg"
