@@ -14,7 +14,7 @@ export const LoginForm = ({ setUser }) => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isDirty, isValid },
   } = useForm({
     resolver: zodResolver(loginFormSchema),
   });
@@ -74,11 +74,7 @@ export const LoginForm = ({ setUser }) => {
         />
       </div>
       <button
-        className={
-          errors && Object.keys(errors).length > 0
-            ? "btn negative bg"
-            : "btn default bg"
-        }
+        className={!isValid || !isDirty ? "btn negative bg" : "btn default bg"}
         type="submit"
         disabled={loading}
       >

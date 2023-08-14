@@ -14,7 +14,7 @@ export const RegisterForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isDirty, isValid },
     reset,
   } = useForm({
     resolver: zodResolver(registerFormSchema),
@@ -131,11 +131,7 @@ export const RegisterForm = () => {
         </option>
       </Select>
       <button
-        className={
-          errors && Object.keys(errors).length > 0
-            ? "btn negative bg"
-            : "btn default bg"
-        }
+        className={!isValid || !isDirty ? "btn negative bg" : "btn default bg"}
         disabled={loading}
       >
         {loading ? <ImSpinner /> : "Cadastrar"}
