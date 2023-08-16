@@ -8,21 +8,8 @@
 
   width: 100%;
   min-height: 100vh;
-  img:first-child{
+  img:first-child {
     width: 25rem;
   }
 }
-.blink {
-  animation: blink 0.9s infinite both;
-}
-@keyframes blink {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.2;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+

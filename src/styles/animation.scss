@@ -19,6 +19,23 @@
 .slideInRight {
   animation: slide-in-rigth 1s ease-in both;
 }
+
+.spinner {
+  animation: rotate 1s linear infinite;
+}
+.blink {
+  animation: blink 0.9s infinite both;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 @keyframes rotate-scale-up {
   0% {
     opacity: 0;
@@ -68,6 +85,17 @@
   }
   100% {
     transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
     opacity: 1;
   }
 }
