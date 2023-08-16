@@ -3,59 +3,27 @@ import { Input } from "../Input";
 import { InputPassword } from "../InputPassword";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { loginFormSchema } from "./loginFormSchema";
-import { useState } from "react";
-import { api } from "../../../services/api";
-import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import { useContext, useState } from "react";
 import { ImSpinner } from "react-icons/im";
+import { UserContext } from "../../../providers/UserContext";
 import styles from "./style.module.scss";
 
-export const LoginForm = ({ setUser }) => {
+export const LoginForm = () => {
+  const [loading, setLoading] = useState(false);
+
+  const { userLogin } = useContext(UserContext);
+
   const {
     register,
     handleSubmit,
     formState: { errors, isDirty, isValid },
+    reset,
   } = useForm({
     resolver: zodResolver(loginFormSchema),
   });
 
-  const navigate = useNavigate();
-
-  const [loading, setLoading] = useState(false);
-
-  const userLogin = async (formData) => {
-    try {
-      setLoading(true);
-      const { data } = await api.post("/sessions", formData);
-      toast.success(`Bem vindo, ${data.user.name}`, {
-        theme: "dark",
-        autoClose: 1500,
-      });
-      setUser(data.user);
-      localStorage.setItem("@TOKEN", data.token);
-      localStorage.setItem("@USERID", data.user.id);
-      setTimeout(() => {
-        navigate("/dashboard");
-      }, 2200);
-    } catch (error) {
-      if (
-        error.response?.data.message ===
-        "Incorrect email / password combination"
-      ) {
-        toast.error("Ops! Algo deu errado", {
-          theme: "dark",
-          autoClose: 1500,
-        });
-      }
-    } finally {
-      setTimeout(() => {
-        setLoading(false);
-      }, 2200);
-    }
-  };
-
   const submit = (formData) => {
-    userLogin(formData);
+    userLogin(formData, setLoading, reset);
   };
   return (
     <form onSubmit={handleSubmit(submit)}>

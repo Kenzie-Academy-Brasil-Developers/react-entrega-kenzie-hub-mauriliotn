@@ -4,13 +4,16 @@ import { Select } from "../Select";
 import { InputPassword } from "../InputPassword";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registerFormSchema } from "./registerFormSchema";
-import { api } from "../../../services/api";
-import { useState } from "react";
-import { toast } from "react-toastify";
+import { useContext, useState } from "react";
 import { ImSpinner } from "react-icons/im";
+import { UserContext } from "../../../providers/UserContext";
 import styles from "./style.module.scss";
 
 export const RegisterForm = () => {
+  const [loading, setLoading] = useState(false);
+
+  const { userRegister } = useContext(UserContext);
+
   const {
     register,
     handleSubmit,
@@ -19,31 +22,8 @@ export const RegisterForm = () => {
   } = useForm({
     resolver: zodResolver(registerFormSchema),
   });
-
-  const [loading, setLoading] = useState(false);
-  const userRegister = async (formData) => {
-    try {
-      setLoading(true);
-      await api.post("/users", formData);
-      toast.success("Conta criada com sucesso!", {
-        theme: "dark",
-        autoClose: 1500,
-      });
-    } catch (error) {
-      if (error.response?.data.message === "Email already exists") {
-        toast.error("usuário ja cadastrado", {
-          theme: "dark",
-          autoClose: 1500,
-        });
-      }
-    } finally {
-      setLoading(useForm);
-    }
-  };
-
   const submit = (formData) => {
-    userRegister(formData);
-    reset();
+    userRegister(formData, setLoading, reset);
   };
 
   return (
@@ -139,8 +119,8 @@ export const RegisterForm = () => {
       <button
         className={
           !isValid || !isDirty
-            ? `btn negative bg & ${styles.slideButton}`
-            : "btn default bg"
+            ? `btn negative bg ${styles.slideButton}`
+            : `btn default bg ${styles.slideButton}` 
         }
         disabled={loading}
       >

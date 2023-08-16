@@ -1,0 +1,73 @@
+.slideLeft {
+  animation: slide-in-left 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.65s both;
+}
+
+.slideInTop {
+  animation: slide-in-top 1s ease-in both;
+}
+.slideInBotton {
+  animation: slide-in-botton 1s ease-in both;
+}
+
+.rotateScaleUp {
+  animation: rotate-scale-up 1s ease-in;
+}
+
+.slideInLeft {
+  animation: slide-in-left 1s ease-in both;
+}
+.slideInRight {
+  animation: slide-in-rigth 1s ease-in both;
+}
+@keyframes rotate-scale-up {
+  0% {
+    opacity: 0;
+    transform: rotate(-540deg) scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-rigth {
+  0% {
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-botton {
+  0% {
+    transform: translateY(1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

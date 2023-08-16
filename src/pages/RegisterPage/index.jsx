@@ -1,11 +1,11 @@
 import { RegisterForm } from "../../components/forms/RegisterForm";
-import styles from "./style.module.scss";
 import { HeaderRegister } from "../../components/Header/HeaderRegister";
+import styles from "./style.module.scss";
 
 export const RegisterPage = () => {
   return (
     <>
-      <main className="pageBox">
+      <main className="pageBox slideInTop">
         <HeaderRegister />
         <div className={`container sm ${styles.flexBox}`}>
           <h1 className="title one">Crie sua conta</h1>

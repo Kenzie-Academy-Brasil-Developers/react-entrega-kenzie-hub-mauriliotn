@@ -26,8 +26,8 @@
     gap: 1.375rem;
   }
 }
+
 main {
-  animation: slide-in-top 1s ease-in both;
   header {
     width: 100%;
   }
@@ -35,16 +35,5 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
-}
-
-@keyframes slide-in-top {
-  0% {
-    transform: translateY(-1000px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
   }
 }

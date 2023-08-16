@@ -1,41 +1,22 @@
 import { HeaderDash } from "../../components/Header/HeaderDash";
-import { api } from "../../services/api";
-import { useEffect, useState } from "react";
+import { useContext } from "react";
 import styles from "./style.module.scss";
-import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../providers/UserContext";
 
-export const DashBoardPage = ({ userLogout }) => {
-  const user = localStorage.getItem("@USERID");
-  const [userLogin, setUserLogin] = useState(null)
-
-  const navigate = useNavigate()
-
-  useEffect(() => {
-    const loadUser = async () => {
-      try {
-        const { data } = await api.get(`/users/${user}`);
-        setUserLogin(data)
-      } catch (error) {
-        console.log(error);
-        navigate("/")
-      }
-    };
-
-    loadUser();
-  }, []);
-  
+export const DashBoardPage = () => {
+  const { user } = useContext(UserContext);
 
   return (
     <>
       <main>
-        <HeaderDash userLogout={userLogout} />
+        <HeaderDash />
         <div className={styles.userFlex}>
-          <div className="container">
-            <h1 className="title one">Olá, {userLogin?.name}</h1>
-            <p className="headline">{userLogin?.course_module}</p>
+          <div className="container slideInBotton">
+            <h1 className="title one">Olá, {user?.name}</h1>
+            <p className="headline">{user?.course_module}</p>
           </div>
         </div>
-        <div className="container">
+        <div className="container slideInTop">
           <div className={styles.contentFlex}>
             <h1 className="title one">
               Que pena! Estamos em desenvolvimento :(
