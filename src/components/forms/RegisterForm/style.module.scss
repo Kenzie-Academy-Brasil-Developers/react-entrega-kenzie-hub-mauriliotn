@@ -3,33 +3,33 @@
   height: 48px;
 }
 .slideName {
-  animation: slide-in-left 1s ease-in 0.65s both;
+  animation: slide-in-left 0.5s ease-in 0.4s both;
 }
 .slideEmail {
-  animation: slide-in-rigth 1s ease-in 0.75s both;
+  animation: slide-in-rigth 0.5s ease-in 0.5s both;
 }
 .slidePassword {
-  animation: slide-in-left 1s ease-in 0.85s both;
+  animation: slide-in-left 0.5s ease-in 0.6s both;
 }
 .slideConfirmPassword {
-  animation: slide-in-rigth 1s ease-in 0.95s both;
+  animation: slide-in-rigth 0.5s ease-in 0.7s both;
 }
 .slideBio {
-  animation: slide-in-left 1s ease-in 1.05s both;
+  animation: slide-in-left 0.5s ease-in 0.8s both;
 }
 .slideContact {
-  animation: slide-in-rigth 1s ease-in 1.15s both;
+  animation: slide-in-rigth 0.5s ease-in 0.9s both;
 }
 .slideModule {
-  animation: slide-in-left 1s ease-in 1.25s both;
+  animation: slide-in-left 0.5s ease-in 1s both;
 }
 .slideButton {
-  animation: slide-in-top 1s ease-in 1.35s both;
+  animation: slide-in-top 0.5s ease-in 1.1s both;
 }
 
 @keyframes slide-in-left {
   0% {
-    transform: translateX(-1000px);
+    transform: translateX(-500px);
     opacity: 0;
   }
   100% {
@@ -39,7 +39,7 @@
 }
 @keyframes slide-in-rigth {
   0% {
-    transform: translateX(1000px);
+    transform: translateX(500px);
     opacity: 0;
   }
   100% {

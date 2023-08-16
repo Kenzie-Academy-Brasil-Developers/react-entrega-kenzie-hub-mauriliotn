@@ -1,23 +1,24 @@
 .slideLeft {
   animation: slide-in-left 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.65s both;
 }
+.slideRight {
+  animation: slide-in-rigth 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.65s both;
+}
 
 .slideInTop {
-  animation: slide-in-top 1s ease-in both;
-}
-.slideInBotton {
-  animation: slide-in-botton 1s ease-in both;
+  animation: slide-in-top 0.5s ease-in both;
 }
 
-.rotateScaleUp {
-  animation: rotate-scale-up 1s ease-in;
+.slideInBotton {
+  animation: slide-in-botton 0.5s ease-in both;
 }
 
 .slideInLeft {
-  animation: slide-in-left 1s ease-in both;
+  animation: slide-in-left 0.5s ease-in both;
 }
+
 .slideInRight {
-  animation: slide-in-rigth 1s ease-in both;
+  animation: slide-in-rigth 0.5s ease-in both;
 }
 
 .spinner {
@@ -33,17 +34,6 @@
   }
   100% {
     transform: rotate(360deg);
-  }
-}
-
-@keyframes rotate-scale-up {
-  0% {
-    opacity: 0;
-    transform: rotate(-540deg) scale(0);
-  }
-  100% {
-    opacity: 1;
-    transform: rotate(0) scale(1);
   }
 }
 
