@@ -1,7 +1,7 @@
 import { HeaderDash } from "../../components/Header/HeaderDash";
 import { useContext } from "react";
-import styles from "./style.module.scss";
 import { UserContext } from "../../providers/UserContext";
+import styles from "./style.module.scss";
 
 export const DashBoardPage = () => {
   const { user } = useContext(UserContext);

@@ -9,7 +9,7 @@ export const LoginPage = () => {
     <>
       <main className="pageBox">
         <img className="slideLeft" src={Logo} alt="Kenzie Hub Logo" />
-        <div className={`container sm slideRight ${styles.flexBox}`}>
+        <div className={`container sm rotateScaleUp ${styles.flexBox}`}>
           <h2 className="title one">Login</h2>
           <LoginForm />
           <div>

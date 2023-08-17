@@ -7,12 +7,13 @@ export const UserContext = createContext({});
 
 export const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-
   const [loading, setLoading] = useState(null);
 
   const navigate = useNavigate();
 
-  const userRegister = async (formData, setLoading, reset, useForm) => {
+  const pathname = window.location.pathname;
+
+  const userRegister = async (formData, setLoading, reset) => {
     try {
       setLoading(true);
       await api.post("/users", formData);
@@ -23,7 +24,7 @@ export const UserProvider = ({ children }) => {
         toast.error("usuário ja cadastrado");
       }
     } finally {
-      setLoading(useForm);
+      setLoading(false);
     }
   };
 
@@ -35,20 +36,16 @@ export const UserProvider = ({ children }) => {
       setUser(data.user);
       localStorage.setItem("@TOKEN", data.token);
       reset();
-      setTimeout(() => {
-        navigate("/dashboard");
-      }, 2200);
+      navigate("/dashboard");
     } catch (error) {
       if (
         error.response?.data.message ===
         "Incorrect email / password combination"
       ) {
-        toast.error("Ops! Algo deu errado");
+        toast.error("Ops! Algo deu errado. Senha ou e-mail inválido");
       }
     } finally {
-      setTimeout(() => {
-        setLoading(false);
-      }, 2200);
+      setLoading(false);
     }
   };
 
@@ -63,7 +60,7 @@ export const UserProvider = ({ children }) => {
           },
         });
         setUser(data);
-        navigate("/dashboard");
+        navigate(pathname);
       } catch (error) {
         console.log(error);
       } finally {
