@@ -24,24 +24,15 @@ img {
 
 input,
 select {
+  background: transparent;
+  border: none;
   &::-ms-reveal,
   &::-ms-clear {
     display: none;
   }
-}
-
-input:autofill,
-input:autofill:hover,
-input:autofill:focus,
-textarea:autofill,
-textarea:autofill:hover,
-textarea:autofill:focus,
-select:autofill,
-select:autofill:hover,
-select:autofill:focus {
-  background: transparent;
-  border: none;
-  -webkit-text-fill-color: var(--color-grey0);
-  box-shadow: none;
-  transition: background-color 5000s ease-in-out 0s;
+  &:autofill{
+    -webkit-text-fill-color: var(--color-grey0);
+    box-shadow: none;
+    transition: background-color 5000s ease-in-out 0s;
+  }
 }
