@@ -42,6 +42,6 @@ select:autofill:focus {
   background: transparent;
   border: none;
   -webkit-text-fill-color: var(--color-grey0);
-  box-shadow: 0 0 0px 1000px va(--color-grey2) inset;
+  box-shadow: none;
   transition: background-color 5000s ease-in-out 0s;
 }
