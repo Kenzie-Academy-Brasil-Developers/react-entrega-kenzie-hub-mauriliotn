@@ -33,10 +33,13 @@ export const UserProvider = ({ children }) => {
       setLoading(true);
       const { data } = await api.post("/sessions", formData);
       toast.success(`Bem vindo, ${data.user.name}`);
-      setUser(data.user);
       localStorage.setItem("@TOKEN", data.token);
       reset();
-      navigate("/dashboard");
+      setTimeout(() => {
+        setUser(data.user);
+        navigate("/dashboard");
+        console.log("passei por aqui");
+      }, 2200);
     } catch (error) {
       if (
         error.response?.data.message ===
@@ -45,7 +48,9 @@ export const UserProvider = ({ children }) => {
         toast.error("Ops! Algo deu errado. Senha ou e-mail inválido");
       }
     } finally {
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+      }, 2200);
     }
   };
 

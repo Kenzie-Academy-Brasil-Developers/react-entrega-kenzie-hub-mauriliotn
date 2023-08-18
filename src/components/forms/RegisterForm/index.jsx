@@ -47,6 +47,7 @@ export const RegisterForm = () => {
         disabled={loading}
         {...register("email")}
       />
+
       <InputPassword
         animationClass={styles.slidePassword}
         label="Senha"
