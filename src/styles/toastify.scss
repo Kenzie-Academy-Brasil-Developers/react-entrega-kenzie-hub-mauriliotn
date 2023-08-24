@@ -1,6 +1,6 @@
 .Toastify__toast-theme--dark {
   width: 286px;
-  height: 69px;
+
   &.Toastify__toast--error,
   &.Toastify__toast--success {
     background: var(--color-grey2);
@@ -28,4 +28,8 @@
   .Toastify__progress-bar--success {
     background: var(--color-sucess);
   }
+}
+
+.toastStr {
+  color: var(--color-negative);
 }

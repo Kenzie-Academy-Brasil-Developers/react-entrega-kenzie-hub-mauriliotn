@@ -5,6 +5,7 @@ import { DashBoardPage } from "../pages/DashboardPage";
 import { Page404 } from "../pages/Page404";
 import { PrivateRoutes } from "./PrivateRoutes";
 import { PublicRoutes } from "./PublicRoutes";
+import { TechProvider } from "../providers/TechContext";
 
 export const RoutesMain = () => {
   return (
@@ -15,7 +16,14 @@ export const RoutesMain = () => {
       </Route>
 
       <Route element={<PrivateRoutes />}>
-        <Route path="/dashboard" element={<DashBoardPage />} />
+        <Route
+          path="/dashboard"
+          element={
+            <TechProvider>
+              <DashBoardPage />
+            </TechProvider>
+          }
+        />
       </Route>
 
       <Route path="*" element={<Page404 />} />

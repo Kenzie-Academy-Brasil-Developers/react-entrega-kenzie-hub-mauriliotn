@@ -38,7 +38,6 @@ export const UserProvider = ({ children }) => {
       setTimeout(() => {
         setUser(data.user);
         navigate("/dashboard");
-        console.log("passei por aqui");
       }, 2200);
     } catch (error) {
       if (

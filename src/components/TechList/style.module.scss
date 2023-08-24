@@ -1,0 +1,11 @@
+.techFlex {
+  display: flex;
+  width: clamp(0px, 100%, 100vw);
+  padding: 1rem;
+  flex-direction: column;
+  gap: 10px;
+  padding: 22px;
+  align-items: center;
+  border-radius: 4px;
+  background: var(--color-grey3);
+}

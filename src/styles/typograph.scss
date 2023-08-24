@@ -16,12 +16,17 @@
     font-weight: 600;
     line-height: 1.625rem;
   }
+  &.three {
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+  }
 }
 
 .headline {
   @extend %font;
   color: var(--color-grey1);
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 400;
   &.bold {
     font-weight: 600;
@@ -31,7 +36,7 @@
 
 .paragrapf {
   @extend %font;
-  font-size: 1rem;
+  font-size: clamp(12px, 8vh, 16px);
   font-weight: 400;
   line-height: 1.125rem;
 }

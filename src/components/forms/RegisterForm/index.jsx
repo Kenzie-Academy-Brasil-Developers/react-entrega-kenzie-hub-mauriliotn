@@ -121,7 +121,7 @@ export const RegisterForm = () => {
         className={
           !isValid || !isDirty
             ? `btn negative bg ${styles.slideButton}`
-            : `btn default bg ${styles.slideButton}` 
+            : `btn default bg ${styles.slideButton}`
         }
         disabled={loading}
       >
