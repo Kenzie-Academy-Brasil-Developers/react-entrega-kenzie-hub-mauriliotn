@@ -10,19 +10,25 @@ export const TechProvider = ({ children }) => {
   const [techsList, setTechsList] = useState([]);
   const [editingTech, setEditingTech] = useState(null);
 
+  const [isOpen, setIsOpen] = useState(null);
   const [createIsOpen, setCreateIsOpen] = useState(null);
   const [editIsOpen, seteditIsOpen] = useState(null);
 
   const openCreateModal = () => {
+    setIsOpen(true)
     setCreateIsOpen(true);
   };
   const openEditModal = () => {
+    setIsOpen(true)
     seteditIsOpen(true);
   };
 
   const closeModal = () => {
-    setCreateIsOpen(null);
-    seteditIsOpen(null);
+    setIsOpen(null)
+    setTimeout(() => {
+      setCreateIsOpen(null);
+      seteditIsOpen(null);
+    }, 500);
   };
 
   useEffect(() => {
@@ -103,6 +109,7 @@ export const TechProvider = ({ children }) => {
   return (
     <TechContext.Provider
       value={{
+        isOpen,
         createIsOpen,
         editIsOpen,
         techsList,

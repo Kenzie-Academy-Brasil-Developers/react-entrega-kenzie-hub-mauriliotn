@@ -12,6 +12,10 @@
   animation: slide-in-top 0.5s ease-in both;
 }
 
+.slideToTop {
+  animation: slide-to-top 0.5s ease-in both;
+}
+
 .slideInBotton {
   animation: slide-in-botton 0.5s ease-in both;
 }
@@ -22,6 +26,14 @@
 
 .slideInRight {
   animation: slide-in-rigth 0.5s ease-in both;
+}
+
+.scaleInCenter {
+  animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.scaleOutCenter {
+	animation: scale-out-center 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
 
 .spinner {
@@ -40,6 +52,7 @@
     transform: rotate(360deg);
   }
 }
+
 
 @keyframes rotate-scale-up {
   0% {
@@ -83,6 +96,16 @@
     opacity: 1;
   }
 }
+@keyframes slide-to-top {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-1000px);
+    opacity: 0;
+  }
+}
 @keyframes slide-in-botton {
   0% {
     transform: translateY(1000px);
@@ -93,6 +116,30 @@
     opacity: 1;
   }
 }
+
+@keyframes scale-in-center {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes scale-out-center {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 1;
+  }
+}
+
+
 @keyframes blink {
   0% {
     opacity: 1;
