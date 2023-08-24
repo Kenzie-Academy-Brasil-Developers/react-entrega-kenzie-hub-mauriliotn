@@ -7,14 +7,19 @@ import { TechContext } from "../../../providers/TechContext";
 import styles from "./style.module.scss";
 
 export const EditTechModal = () => {
-  const { closeModal } = useContext(TechContext);
+  const { closeModal, isOpen } = useContext(TechContext);
 
   const ref = useOutclick(() => closeModal());
   useKeydown("Escape", () => closeModal());
 
   return (
     <div className={styles.modalOverlay} role="dialog">
-      <div ref={ref} className={styles.modalBox}>
+      <div
+        ref={ref}
+        className={`${styles.modalBox} ${
+          isOpen ? "scaleInCenter" : "scaleOutCenter"
+        }`}
+      >
         <div className={styles.modalHeader}>
           <h3 className="title three">Tecnologia Detalhes</h3>
           <button onClick={closeModal}>
