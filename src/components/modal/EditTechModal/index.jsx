@@ -1,8 +1,8 @@
-import { EditModalForm } from "../../forms/ModalForm/EditModalForm";
-import { MdClose } from "react-icons/md";
-import { useKeydown } from "../../../hooks/useKeydown";
-import { useOutclick } from "../../../hooks/useOutClick";
 import { useContext } from "react";
+import { MdClose } from "react-icons/md";
+import { EditModalForm } from "../../forms/ModalForm/EditModalForm";
+import { useKeydown } from "../../../hooks/useKeydown";
+import { useOutclick } from "../../../hooks/useOutclick";
 import { TechContext } from "../../../providers/TechContext";
 import styles from "./style.module.scss";
 
